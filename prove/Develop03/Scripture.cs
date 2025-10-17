@@ -51,7 +51,6 @@ class Scripture
 
     public void ShowRandomScripture()
     {
-        Console.WriteLine(">>> ShowRandomScripture() called");
         _currentIndex = random.Next(_references.Count);
         _currentWords = new List<Word>();
 
