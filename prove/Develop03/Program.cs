@@ -18,7 +18,7 @@ class Program
 
             bool wordsLeft = scripture.HideMoreWords();
 
-            if (!wordsLeft)
+            if (wordsLeft == false)
             {
                 break;
             }
