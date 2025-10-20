@@ -6,6 +6,17 @@ class Scripture
     private Random _random;
     private int _currentIndex;
     private List<Word> _currentWords;
+
+    // Behaviors
+      public Scripture() // Constructor
+    {
+        _references = new List<Reference>();
+        _verses = new List<List<Word>>();
+        _random = new Random();
+
+        // Load all scriptures and verses
+        LoadScriptureData();
+    }
     private void LoadScriptureData()
     {
         // Add references
@@ -34,16 +45,6 @@ class Scripture
 
             _verses.Add(wordList);
         }
-    }
-    // Behaviors
-    public Scripture() // Constructor
-    {
-        _references = new List<Reference>();
-        _verses = new List<List<Word>>();
-        _random = new Random();
-
-        // Load all scriptures and verses
-        LoadScriptureData();
     }
     public void ShowRandomScripture()
     {
