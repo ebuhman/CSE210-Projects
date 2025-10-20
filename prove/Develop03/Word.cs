@@ -2,35 +2,47 @@ class Word
 {
     // Attributes
     private string _wordUsed;
-    private int _length;
     private bool _isHidden;
 
-
     // Behaviors
-    public Word(string word)
+    public Word(string word) // Constructor
     {
         _wordUsed = word;
-        _length = word.Length;
         _isHidden = false;
     }
+
+    // Hides Word
     public void Hide()
     {
         _isHidden = true;
     }
+
+    // Reveals Word
+    public void Show()
+    {
+        _isHidden = false;
+    }
+
+    // Checks if Hidden
     public bool IsHidden()
     {
         return _isHidden;
     }
-    public string GetDisplayText()
+    public string GetDisplayText() // getter
     {
-        if (_isHidden)
+        if (_isHidden == true)
         {
-            return new string('_', _length);
+            // Replace each character in the word with an underscore
+            string hiddenWord = "";
+            for (int i = 0; i < _wordUsed.Length; i++)
+            {
+                hiddenWord += "_";
+            }
+            return hiddenWord;
         }
         else
         {
             return _wordUsed;
         }
     }
-    
 }
