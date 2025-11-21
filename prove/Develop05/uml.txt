@@ -1,0 +1,45 @@
+                       +----------------------+
+                       |      <<abstract>>    |
+                       |         Goal         |
+                       +----------------------+
+                       | - Name: string       |
+                       | - Description: string|
+                       | - Points: int        |
+                       | - IsCompleted: bool  |
+                       +----------------------+
+                       | + RecordEvent(): int |
+                       | + DisplayStatus():   |
+                       |   string             |
+                       | + ToData(): string   |
+                       +----------------------+
+                                 ^
+                                 |
+   ------------------------------------------------------------------
+   |                              |                                 |
+   |                              |                                 |
++------------------+   +--------------------+         +----------------------+
+|    SimpleGoal    |   |    EternalGoal    |         |    ChecklistGoal     |
++------------------+   +--------------------+         +----------------------+
+| (inherits Goal)  |   | (inherits Goal)   |         | (inherits Goal)      |
++------------------+   +--------------------+         +----------------------+
+| (no extras)       |  | (no extras)        |         | - TargetCount: int   |
+|                   |   |                   |         | - CurrentCount: int  |
+|                   |   |                   |         | - BonusPoints: int   |
++------------------+   +--------------------+         +----------------------+
+| + RecordEvent()   |  | + RecordEvent()    |         | + RecordEvent()      |
+| + DisplayStatus() |  | + DisplayStatus()  |         | + DisplayStatus()    |
++------------------+   +--------------------+         +----------------------+
+
+                         +---------------------------+
+                         |        GoalManager        |
+                         +---------------------------+
+                         | - Goals: List<Goal>       |
+                         | - TotalPoints: int        |
+                         +---------------------------+
+                         | + CreateGoal()            |
+                         | + ListGoals()             |
+                         | + RecordEvent()           |
+                         | + SaveGoals(file)         |
+                         | + LoadGoals(file)         |
+                         | + ShowScore()             |
+                         +---------------------------+
